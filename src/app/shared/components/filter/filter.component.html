@@ -1,0 +1,55 @@
+<!-- Button trigger modal -->
+<div class="divBtnFilter">
+  <button type="button" class="btn btn-primary position-relative" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <img src="assets/icons/filter.svg" alt="filter icon">
+    Filtro
+    <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle" *ngIf="boleano">
+      <span class="visually-hidden">New alerts</span>
+    </span>
+  </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          <img src="assets/icons/filter.svg" alt="filter icon">
+          Filtro
+        </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="filterForm" (submit)="applyFilter()">
+        <div class="modal-body">
+
+          <h6>Preço</h6>
+          <div class="d-flex gap-4">
+            <label>
+              <input type="radio" class="form-check-input" formControlName="priceLimit" value="" name="priceLimit"> Todos
+            </label>
+            <label>
+              <input type="radio" class="form-check-input" formControlName="priceLimit" value="100" name="priceLimit"> Até R$100
+            </label>
+            <label>
+              <input type="radio" class="form-check-input" formControlName="priceLimit" value="500" name="priceLimit"> Até R$500
+            </label>
+          </div>
+
+          <hr>
+
+          <h6>Categorias</h6>
+          <select class="container-fluid form-select " formControlName="categories">
+            <option value="" >Todas</option>
+            <option value="{{item}}" *ngFor="let item of separateCategories" >{{item | titlecase}}</option>
+          </select>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="applyFilter()">Aplicar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

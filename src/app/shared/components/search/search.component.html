@@ -1,0 +1,17 @@
+<div>
+
+  <div class="searchContainer">
+    <input type="text" placeholder="Digite algo..." #inputSearch (keyup)="search(inputSearch.value)">
+    <button>
+      <img src="assets/icons/search.svg" alt="search icon">
+    </button>
+  </div>
+
+  <ul class="list-group list-group-flush listResultsSearch" *ngIf="inputSearch.value">
+    <li class="list-group-item list-group-item-action" *ngFor="let item of listSearch">
+      {{item.title}}
+      <p>{{item.category | titlecase}}</p>
+    </li>
+  </ul>
+
+</div>

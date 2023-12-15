@@ -1,0 +1,10 @@
+.divBtnFilter {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  img {
+    filter: invert(1);
+    width: 18px;
+  }
+}

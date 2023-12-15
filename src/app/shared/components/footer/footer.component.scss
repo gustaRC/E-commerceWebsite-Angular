@@ -1,0 +1,15 @@
+.footerConteiner {
+  background-color: var(--bg-dark);
+  color: var(--white);
+
+  height:8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-top: 6rem;
+
+  position: relative;
+  bottom: 0;
+}

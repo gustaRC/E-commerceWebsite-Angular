@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'scss/';
+
+:root {
+  --bg-light: #e3e6e6;
+  --bg-dark: #131921;
+
+  --white: #fafafa;
+
+  --text-light: #fafafa;
+  --text-dark: #131921;
+
+  --tittle-text:#febd69;
+
+  --primary-color: #232f3d;
+  --secondary-color: #0d6efd;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  transition: 0.2s;
+
+  a {
+    text-decoration: none;
+    color: #131921;
+  }
+
+  textarea:focus, input:focus {
+    outline: 0;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: var(--bg-light);
+
+  height: 100vh;
+
+  /* superior | direita | inferior | esquerda */
+  padding: 6rem 0 0 0;
+}

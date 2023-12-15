@@ -1,0 +1,13 @@
+
+<div class="px-5">
+  <div class="topPage">
+    <h1>Todos os produtos</h1>
+    <app-filter (outputFilter)="filterManipulation($event)"></app-filter>
+  </div>
+
+  <div class="px-4">
+
+    <app-cards [inputFilter]="filter"></app-cards>
+
+  </div>
+</div>

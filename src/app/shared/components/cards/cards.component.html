@@ -1,0 +1,20 @@
+<!-- <div class="filterClass pb-4">
+  <app-filter (emitFilter)="filterManipulation($event)"></app-filter>
+</div> -->
+
+<div class="carouselProducts" >
+
+  <div class="card" style="width: 15rem;" *ngFor="let item of listProducts">
+    <a>
+      <img src="{{item.image}}" class="card-img-top img-product-card pt-2" alt="{{item.title}} - Imagem">
+    </a>
+    <div class="card-body cardSize">
+      <h5 class="card-title">{{item.title | limitLength}}</h5>
+      <a class="card-text categoriesText-cardProducts">{{item.category | titlecase}}</a>
+      <a class="btn btn-outline-primary btnBought mt-3">
+        {{item.price | currency: 'R$ '}}</a>
+    </div>
+
+  </div>
+
+</div>
