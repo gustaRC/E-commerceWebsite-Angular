@@ -8,7 +8,7 @@
   </div>
 
   <ul class="list-group list-group-flush listResultsSearch" *ngIf="inputSearch.value">
-    <li class="list-group-item list-group-item-action" *ngFor="let item of listSearch">
+    <li class="list-group-item list-group-item-action cursor-pointer" *ngFor="let item of listSearch" [routerLink]="['products/', item.id]">
       {{item.title}}
       <p>{{item.category | titlecase}}</p>
     </li>

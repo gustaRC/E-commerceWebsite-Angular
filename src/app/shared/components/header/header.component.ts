@@ -36,10 +36,4 @@ export class HeaderComponent implements OnInit {
       )
       // console.log(this.separateCategories)
     }
-
-    //ENVIAR SELEÇÃO DE CATEGORIAS
-    selectCategories(value: string) {
-      console.log(value)
-    }
-
 }

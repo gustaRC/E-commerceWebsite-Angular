@@ -19,4 +19,10 @@ export class ProductsListService {
     )
   }
 
+  getId(id: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/${id}`).pipe(
+      res => res
+    )
+  }
+
 }

@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center bg-white">
+  <img [src]="bannerIMG" alt="" class="container-fluid px-0 imgBanner">
+</div>
+
+<div class="boxPrincipal">
+  <div class="titleLineBox">
+    <h1>Principais Produtos - <span class="badge bg-secondary">{{categoryTxt | titlecase}}</span> </h1>
+
+  </div>
+
+  <app-cards [inputFilter]="filterSelected"></app-cards>
+
+</div>

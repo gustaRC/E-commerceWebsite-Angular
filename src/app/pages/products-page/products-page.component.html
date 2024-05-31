@@ -1,0 +1,31 @@
+<div class="boxPrincipal">
+
+  <div class="productMainBox">
+    <div class="imgProductPage">
+      <img src="{{selectedProduct?.image}}" alt="`{{selectedProduct?.title}}">
+
+    </div>
+
+    <div class="detailsProductPage">
+
+      <div>
+        <h1>{{selectedProduct?.title}} <br>
+          <a style="font-size: 1.2rem;" class="card-text categoriesText-cardProducts" [routerLink]="['/categories', selectedProduct?.category]">{{selectedProduct?.category | titlecase}}</a>
+        </h1>
+
+        <h4>Descrição</h4>
+        <p>{{selectedProduct?.description}}</p>
+      </div>
+
+
+
+      <button class="btn btn-primary btnBought mt-5">
+        <img src="/assets/icons/shopping-bag.png" alt="shopping bag" width="45px"> {{selectedProduct?.price | currency: 'R$ '}}</button>
+    </div>
+
+  </div>
+
+  <h1 class="mb-4">Relacionados</h1>
+  <app-cards [inputQtdeCards]="7"></app-cards>
+
+</div>

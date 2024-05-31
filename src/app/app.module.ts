@@ -21,6 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AccordionModule} from 'primeng/accordion';
 import {SliderModule} from 'primeng/slider';
 import { InputTextModule } from 'primeng/inputtext';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { LoadingComponent } from './shared/components/loading/loading.component';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { InputTextModule } from 'primeng/inputtext';
     HomePageComponent,
     SearchComponent,
     FilterComponent,
+    CategoryPageComponent,
+    LoadingComponent,
+    ProductsPageComponent,
   ],
   imports: [
     HttpClientModule,

@@ -1,11 +1,10 @@
 <nav class="navbar bg-body-tertiary navFixed">
 
-  <div class="container-fluid">
-    <a class="navbar-brand tittleLogo">
+  <div class="container-fluid" >
+    <a class="navbar-brand tittleLogo" [routerLink]="['']">
       <img src="/assets/logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       E-commerce
     </a>
-
 
     <app-search style="width: 50%;" class="searchContainer"></app-search>
 
@@ -34,7 +33,11 @@
 
           <div class="offcanvas-body">
             <ul class="list-group list-group-flush" *ngFor="let item of separateCategories">
-              <li class="list-group-item list-group-item-action mb-3 cursor-pointer" aria-current="true" (click)="selectCategories(item.category)">{{item.category | titlecase}}</li>
+              <li
+                class="list-group-item list-group-item-action mb-3 cursor-pointer"
+                aria-current="true"
+                [routerLink]="['/categories', item.category]"
+                >{{item.category | titlecase}}</li>
             </ul>
           </div>
         </div>

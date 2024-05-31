@@ -1,18 +1,15 @@
-<!-- <div class="filterClass pb-4">
-  <app-filter (emitFilter)="filterManipulation($event)"></app-filter>
-</div> -->
+<app-loading *ngIf="loading"></app-loading>
 
 <div class="carouselProducts" >
 
   <div class="card" style="width: 15rem;" *ngFor="let item of listProducts">
     <a>
-      <img src="{{item.image}}" class="card-img-top img-product-card pt-2" alt="{{item.title}} - Imagem">
+      <img src="{{item.image}}" class="card-img-top img-product-card pt-2 cursor-pointer" alt="{{item.title}} - Imagem" [routerLink]="['/products', item.id]">
     </a>
     <div class="card-body cardSize">
-      <h5 class="card-title">{{item.title | limitLength}}</h5>
-      <a class="card-text categoriesText-cardProducts">{{item.category | titlecase}}</a>
-      <a class="btn btn-outline-primary btnBought mt-3">
-        {{item.price | currency: 'R$ '}}</a>
+      <h5 class="card-title cursor-pointer" [routerLink]="['/products', item.id]">{{item.title | limitLength}}</h5>
+      <a class="card-text categoriesText-cardProducts" [routerLink]="['/categories', item.category]">{{item.category | titlecase}}</a>
+      <a class="btn btn-outline-primary btnBought mt-3" [routerLink]="['/products', item.id]">{{item.price | currency: 'R$ '}}</a>
     </div>
 
   </div>

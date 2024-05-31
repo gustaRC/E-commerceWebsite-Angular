@@ -35,6 +35,10 @@
   .cursor-pointer {
     cursor: pointer;
   }
+
+  *::selection {
+    background-color: #232f3d42;
+  }
 }
 
 body {
@@ -43,5 +47,5 @@ body {
   height: 100vh;
 
   /* superior | direita | inferior | esquerda */
-  padding: 6rem 0 0 0;
+  padding: 3rem 0 0 0;
 }

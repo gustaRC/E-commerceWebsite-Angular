@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductsListService } from '../../services/products-list.service';
+import { FilterType } from '../../interface/filter-type';
 
 @Component({
   selector: 'app-cards',
@@ -13,30 +14,45 @@ export class CardsComponent implements OnInit, OnChanges {
 
   @Input() inputQtdeCards!: number
 
-  @Input() inputFilter!: any
+  @Input() inputFilter!: FilterType
+
+  loading: boolean = true
 
   constructor(private productsListService: ProductsListService) { }
 
   ngOnInit(): void {
-
+    //GET API
     this.productsListService.getList().subscribe(
       res => {
           res.forEach(el => {
-            if (this.listProducts.length < this.inputQtdeCards) {
+            if (this.listProducts.length > this.inputQtdeCards) {
               this.listProductsBackup.push(el)
+              console.log("testetesteteste")
 
-            } else if (!this.inputQtdeCards) {        
+            } else if (!this.inputQtdeCards) {
               this.listProductsBackup = res
 
             }
-            this.listProducts = this.listProductsBackup
           })
+
+          console.log('this.listProductsBackup:')
+          console.log(this.listProductsBackup)
+
+          if (this.inputFilter) {
+            this.listProducts = this.listProductsBackup
+            this.filterManipulation()
+
+          } else {
+            this.listProducts = this.listProductsBackup
+          }
+
+          this.loading = false
       },
       err => err
     )
   }
 
-
+  //FILTER
   ngOnChanges(): void {
 
     this.filterManipulation()
@@ -44,6 +60,7 @@ export class CardsComponent implements OnInit, OnChanges {
   }
 
   filterManipulation() {
+
     //RESET
     this.listProducts = this.listProductsBackup
 
@@ -72,5 +89,4 @@ export class CardsComponent implements OnInit, OnChanges {
 
     }
   }
-
 }
